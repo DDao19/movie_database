@@ -36,10 +36,8 @@ const App = () => {
   }
 
   const openPopup = id => {
-    console.log(id);
     axios.get(APIURL + "&i=" + id).then(({ data }) => {
       let result = data
-      console.log(result)
 
       setState(prevState => {
         return { ...prevState, selected: result }
