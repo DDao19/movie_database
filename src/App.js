@@ -17,7 +17,7 @@ const App = () => {
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(APIURL + "&s=" + state.s)
+      axios.get(APIURL + "&s=" + state.s)
       .then(({ data }) => {
         let results = data.Search
     
@@ -37,7 +37,7 @@ const App = () => {
 
   const openPopup = id => {
     console.log(id);
-    axios(APIURL + "&i=" + id).then(({ data }) => {
+    axios.get(APIURL + "&i=" + id).then(({ data }) => {
       let result = data
       console.log(result)
 
